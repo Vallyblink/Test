@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Імпортуйте BrowserRouter та Routes
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import HomePage from './pages/homePage.js';
 import AuthPage from './pages/authPage.js';
 import MainPage from './pages/mainPage.js';
