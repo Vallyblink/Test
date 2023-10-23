@@ -8,13 +8,12 @@ import MainPage from './pages/mainPage.js';
 function App() {
   return (
     <div>
-      <Router basename="/">
         <Routes> 
           <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/main" element={<MainPage/>} />
         </Routes>
-      </Router>
+
     </div>
   );
 }
