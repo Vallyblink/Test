@@ -5,17 +5,17 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 `;
 
 const ImageContainer = styled.div`
   flex: 1;
-  max-width: 890px;
+  width: 890px;
+  height: 943px;
+
 `;
 
 const Image = styled.img`
-  max-width: 100%;
-  height: auto;
+  object-fit: cover;
 `;
 
 const FormContainer = styled.div`
@@ -23,7 +23,6 @@ const FormContainer = styled.div`
   background: #fff;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const Form = styled.form`
@@ -31,10 +30,18 @@ const Form = styled.form`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const FormGroup = styled.div`
   margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Label = styled.label`
@@ -47,16 +54,32 @@ const Input = styled.input`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-top: 5px;
 `;
 
 const Button = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: rgba(178, 159, 126, 1);
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
+`;
+
+const TextLink = styled.a`
+  color: rgba(178, 159, 126, 1);
+  text-decoration: none;
+  text-align: right;
+  font-size: 14px;
+  margin-top: 5px;
+  align-self: flex-end;
+`;
+
+const Title = styled.h1`
+  text-align: start;
+  font-size: 24px;
 `;
 
 function AuthWrapper() {
@@ -87,7 +110,7 @@ function AuthWrapper() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(user), 
+      body: JSON.stringify(user),
     })
       .then((response) => {
         if (response.status === 201) {
@@ -99,6 +122,7 @@ function AuthWrapper() {
       .catch((error) => {
         console.error('Помилка під час виконання POST-запиту:', error);
       });
+    
   };
 
   return (
@@ -106,7 +130,9 @@ function AuthWrapper() {
       <ImageContainer>
         <Image src="https://res.cloudinary.com/teamprojectavatar/image/upload/v1697915124/TestTask/itfbavpldxaouak5enzm.jpg" alt="city view" />
       </ImageContainer>
+
       <FormContainer>
+        <Title>Логін</Title>
         <Form onSubmit={handleSubmit}>
           <FormGroup>
             <Label htmlFor="email">Email</Label>
@@ -116,6 +142,7 @@ function AuthWrapper() {
               name="email"
               value={userData.email}
               onChange={handleInputChange}
+              placeholder="Email"
             />
           </FormGroup>
           <FormGroup>
@@ -126,10 +153,13 @@ function AuthWrapper() {
               name="password"
               value={userData.password}
               onChange={handleInputChange}
+              placeholder="Password"
             />
           </FormGroup>
-          <Button type="submit">Register</Button>
+          <Button type="submit" onClick={() => window.location.href = 'main'}>Register</Button>
+          <TextLink href="#">Forgot password?</TextLink>
         </Form>
+        <TextLink href="#">Don't have an account? Sign Up</TextLink>
       </FormContainer>
     </Wrapper>
   );

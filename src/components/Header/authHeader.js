@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
   height: 80px;
   background-color: rgba(23, 34, 52, 1);
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   align-items: center;
-  padding-right: 10px; 
+  padding-right: 10px;
 `;
 
 const NavList = styled.ul`
@@ -16,7 +16,7 @@ const NavList = styled.ul`
   padding: 0;
   margin-right: 80px;
   display: flex;
-  gap:10px;
+  gap: 10px;
 `;
 
 const AuthButton = styled.button`
@@ -29,7 +29,7 @@ const AuthButton = styled.button`
 `;
 
 const LoginButton = styled.button`
- background: transparent;
+  background: transparent;
   font-family: 'Merriweather', serif;
   border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 1);
@@ -39,18 +39,23 @@ const LoginButton = styled.button`
 `;
 
 function Header() {
+  const location = useLocation();
+
   return (
     <HeaderContainer>
-        <NavList>
-            <Link to="/auth">
-              <LoginButton>Log in</LoginButton>
+      <NavList>
+        {location.pathname !== '/auth' && (
+          <Link to="/auth">
+            <LoginButton>Log in</LoginButton>
           </Link>
-          
-            <Link to="/auth">
-              <AuthButton>Sign up</AuthButton>
-            </Link>
-       
-        </NavList>
+        )}
+
+        {location.pathname !== '/auth' && (
+          <Link to="/auth">
+            <AuthButton>Sign up</AuthButton>
+          </Link>
+        )}
+      </NavList>
     </HeaderContainer>
   );
 }

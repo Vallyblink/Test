@@ -1,13 +1,14 @@
 import React from 'react';
-import Header from '../components/authHeader.js';
-import AuthWrapper from '../components/authWrapper.js';
+import MainWrapper from 'components/mainWrapper.js';
+import MainHeader from 'components/Header/mainHeader.js';
 
 
 function MainPage() {
   return (
-     <div>
-      <Header />
-      <AuthWrapper/>
+    <div>
+      <MainHeader/>
+      <MainWrapper/>
+     
       </div>
   );
 }

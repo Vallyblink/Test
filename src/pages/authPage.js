@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/authHeader.js';
+import Header from '../components/Header/authHeader.js';
 import AuthWrapper from '../components/authWrapper.js';
 
 
