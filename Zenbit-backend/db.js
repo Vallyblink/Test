@@ -10,3 +10,5 @@ const pool = new Pool({
   password: "Iritub78",
   port: 5432,
 });
+
+export default pool;
