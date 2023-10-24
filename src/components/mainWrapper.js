@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { fetchDataRequest, fetchDataSuccess, fetchDataFailure } from '../redux/dataSlice.js';
+import { useDispatch } from 'react-redux';
 
 const Wrapper = styled.div`
   background-position: center;
@@ -22,6 +24,20 @@ const Text = styled.div`
 `;
 
 function MainWrapper() {
+ const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchDataRequest());
+
+    fetch('/data')
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(fetchDataSuccess(data));
+      })
+      .catch((error) => {
+        dispatch(fetchDataFailure(error));
+      });
+  }, [dispatch]);
+  
   return (
     <Wrapper>
       <DataContainer>
