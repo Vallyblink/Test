@@ -1,0 +1,38 @@
+[
+  {
+    "name": "The Marina Torch",
+    "sold": "75%",
+    "price": "6,500,000 Dhs",
+    "yield": "9.25%",
+    "ticket": "60,000 Dhs",
+    "days_left": 150,
+    "image_url": "https://res.cloudinary.com/teamprojectavatar/image/upload/v1697915125/TestTask/krwehgdhcafauqwxpvaz.jpg"
+  },
+  {
+    "name": "HHHR Tower",
+    "sold": "75%",
+    "price": "6,500,000 Dhs",
+    "yield": "9.25%",
+    "ticket": "60,000 Dhs",
+    "days_left": 150,
+    "image_url": "https://res.cloudinary.com/teamprojectavatar/image/upload/v1697915124/TestTask/xi4hlspadma5edc4cqs1.jpg"
+  },
+  {
+    "name": "Ocean Peaks",
+    "sold": "75%",
+    "price": "6,500,000 Dhs",
+    "yield": "9.25%",
+    "ticket": "60,000 Dhs",
+    "days_left": 150,
+    "image_url": "https://res.cloudinary.com/teamprojectavatar/image/upload/v1697915125/TestTask/dn4qwvtnvb9ejc5gmfbb.jpg"
+  },
+  {
+    "name": "Al Yaqoub Tower",
+    "sold": "75%",
+    "price": "6,500,000 Dhs",
+    "yield": "9.25%",
+    "ticket": "60,000 Dhs",
+    "days_left": 150,
+    "image_url": "https://res.cloudinary.com/teamprojectavatar/image/upload/v1697915124/TestTask/hzr1j8yny7bpuy5aiiv9.jpg"
+  }
+]
